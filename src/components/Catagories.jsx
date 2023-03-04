@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Catagories = () => (
-  <h1>
-    hello form Catagories
-  </h1>
+  <button type="button" className="button status">
+    Check status
+  </button>
 );
 
 export default Catagories;
