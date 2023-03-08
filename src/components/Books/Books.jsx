@@ -1,24 +1,16 @@
+import { useSelector } from 'react-redux';
 import React from 'react';
 import Book from './Book';
 import Form from './Form';
 
 const Books = () => {
-  const books = [
-    {
-      id: 1,
-      title: 'Viking Raiders',
-      author: 'Jhon Snow',
-    },
-    {
-      id: 2,
-      title: 'Viking Raiders',
-      author: 'Jhon Snow',
-    },
-  ];
+  const { bookstore: { bookStore: books } } = useSelector((store) => store);
+  console.log(books);
   const BookComponent = books.map(
     (book) => (
       <Book
         key={book.id}
+        id={book.id}
         title={book.title}
         author={book.author}
       />

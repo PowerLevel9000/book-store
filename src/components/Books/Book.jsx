@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import { useDispatch } from 'react-redux';
+// import { removeBook } from '../../redux/books/bookSlice';
 
 const Book = ({ title, author }) => (
   <div className="book-wrapper">
@@ -12,6 +14,7 @@ const Book = ({ title, author }) => (
 Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
+  // id: PropTypes.string.isRequired,
 };
 
 export default Book;
