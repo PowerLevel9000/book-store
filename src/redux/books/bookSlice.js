@@ -30,13 +30,21 @@ const bookSlice = createSlice({
   initialState,
   reducers: {
     addBook: (state, action) => {
-      state.bookStore.push(action.payload);
+      const { title, author, category } = action.payload;
+      const newBook = {
+        itemId: `item${state.bookStore.length + 1}`, title, author, category,
+      };
+      state.bookStore.push(newBook);
     },
-    removeBook: (state, action) => {
-      state.bookStore.filter((book) => book.id !== action.payload);
-    },
+    removeBook: (state, action) => ({
+      ...state,
+      bookStore: state.bookStore.filter((book) => book.itemId !== action.payload),
+    })
+    ,
   },
 });
+// eslint-disable-next-line
+// console.log(bookSlice);
 
 export const { addBook, removeBook } = bookSlice.actions;
 export default bookSlice.reducer;
