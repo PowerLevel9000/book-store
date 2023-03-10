@@ -1,11 +1,12 @@
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
+import { BallTriangle } from 'react-loader-spinner';
 import Book from './Book';
 import Form from './Form';
 import { getBooks } from '../../redux/books/bookSlice';
 
 const Books = () => {
-  const { bookstore: { bookStore: books } } = useSelector((store) => store);
+  const { bookstore: { bookStore: books, booksLoading: loading } } = useSelector((store) => store);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBooks());
@@ -22,6 +23,11 @@ const Books = () => {
   );
   return (
     <section className="book-shelf">
+      {loading ? (
+        <BallTriangle />
+      ) : (
+        BookComponent
+      )}
       {BookComponent}
       <Form />
     </section>

@@ -7,7 +7,6 @@ const Form = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const { bookstore: { isLoading: loading } } = useSelector((store) => store);
-  console.log('store', loading);
   const handleAdd = async (event) => {
     event.preventDefault();
     try {

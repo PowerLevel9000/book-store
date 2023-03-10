@@ -24,6 +24,7 @@ export const postBooks = createAsyncThunk('book/postBooks', async (book) => {
 const initialState = {
   bookStore: [],
   isLoading: false,
+  booksLoading: false,
 };
 
 export const getBooks = createAsyncThunk('book/getBooks', async () => {
@@ -88,13 +89,16 @@ const bookSlice = createSlice({
       return {
         ...state,
         bookStore: newBook,
+        booksLoading: false,
       };
     });
     builder.addCase(getBooks.pending, (state) => ({
       ...state,
+      booksLoading: true,
     }));
     builder.addCase(getBooks.rejected, (state) => ({
       ...state,
+      booksLoading: false,
     }));
 
     builder.addCase(deleteBook.pending, (state) => ({
