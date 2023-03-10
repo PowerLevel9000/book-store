@@ -1,6 +1,25 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+// import axios from 'axios';
 
-//  initial sate
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/2qDaC6YvyF2tnB4OHcf8';
+
+// create async thunk
+export const postBooks = createAsyncThunk('book/postBooks', async (book) => {
+  const response = await fetch(`${url}/books`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: new Date(),
+      title: book.title,
+      author: book.author,
+      category: 'Fiction',
+    }),
+  });
+  const data = await response.json();
+  return data;
+});
 
 const initialState = {
   bookStore: [
@@ -23,6 +42,7 @@ const initialState = {
       category: 'Nonfiction',
     },
   ],
+  isLoading: false,
 };
 
 const bookSlice = createSlice({
@@ -39,12 +59,22 @@ const bookSlice = createSlice({
     removeBook: (state, action) => ({
       ...state,
       bookStore: state.bookStore.filter((book) => book.itemId !== action.payload),
-    })
-    ,
+    }),
+  },
+  extraReducers: (builder) => {
+    builder.addCase(postBooks.pending, (state) => ({
+      ...state,
+      isLoading: true,
+    }));
+    builder.addCase(postBooks.fulfilled, (state, action) => {
+      state.bookStore.push(action.payload);
+      return {
+        ...state,
+        isLoading: true,
+      };
+    });
   },
 });
-// eslint-disable-next-line
-// console.log(bookSlice);
 
 export const { addBook, removeBook } = bookSlice.actions;
 export default bookSlice.reducer;
