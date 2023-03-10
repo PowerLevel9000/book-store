@@ -32,6 +32,17 @@ export const getBooks = createAsyncThunk('book/getBooks', async () => {
   return data;
 });
 
+export const deleteBook = createAsyncThunk('book/deleteBook', async (id) => {
+  const response = await fetch(`${url}/books/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  const data = await response.json();
+  return data;
+});
+
 const bookSlice = createSlice({
   name: 'bookstore',
   initialState,
@@ -53,13 +64,19 @@ const bookSlice = createSlice({
       ...state,
       isLoading: true,
     }));
+
     builder.addCase(postBooks.fulfilled, (state, action) => {
       state.bookStore.push(action.payload);
       return {
         ...state,
-        isLoading: true,
+        isLoading: false,
       };
     });
+
+    builder.addCase(postBooks.rejected, (state) => ({
+      ...state,
+      isLoading: false,
+    }));
 
     builder.addCase(getBooks.fulfilled, (state, action) => {
       const newBook = Object.entries(action.payload).map(
@@ -68,8 +85,29 @@ const bookSlice = createSlice({
           ...book[1][0],
         }),
       );
-      return { ...state, bookStore: newBook };
+      return {
+        ...state,
+        bookStore: newBook,
+      };
     });
+    builder.addCase(getBooks.pending, (state) => ({
+      ...state,
+    }));
+    builder.addCase(getBooks.rejected, (state) => ({
+      ...state,
+    }));
+
+    builder.addCase(deleteBook.pending, (state) => ({
+      ...state,
+    }));
+
+    builder.addCase(deleteBook.fulfilled, (state) => ({
+      ...state,
+    }));
+
+    builder.addCase(deleteBook.rejected, (state) => ({
+      ...state,
+    }));
   },
 });
 
