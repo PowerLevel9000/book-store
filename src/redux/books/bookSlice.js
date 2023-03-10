@@ -22,28 +22,15 @@ export const postBooks = createAsyncThunk('book/postBooks', async (book) => {
 });
 
 const initialState = {
-  bookStore: [
-    {
-      itemId: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      itemId: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      itemId: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
+  bookStore: [],
   isLoading: false,
 };
+
+export const getBooks = createAsyncThunk('book/getBooks', async () => {
+  const response = await fetch(`${url}/books`);
+  const data = await response.json();
+  return data;
+});
 
 const bookSlice = createSlice({
   name: 'bookstore',
@@ -72,6 +59,16 @@ const bookSlice = createSlice({
         ...state,
         isLoading: true,
       };
+    });
+
+    builder.addCase(getBooks.fulfilled, (state, action) => {
+      const newBook = Object.entries(action.payload).map(
+        (book) => ({
+          itemId: book[0],
+          ...book[1][0],
+        }),
+      );
+      return { ...state, bookStore: newBook };
     });
   },
 });

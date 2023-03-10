@@ -1,11 +1,15 @@
-import { useSelector } from 'react-redux';
-import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
 import Book from './Book';
 import Form from './Form';
+import { getBooks } from '../../redux/books/bookSlice';
 
 const Books = () => {
   const { bookstore: { bookStore: books } } = useSelector((store) => store);
-  // console.log(books);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getBooks());
+  }, [dispatch]);
   const BookComponent = books.map(
     (book) => (
       <Book
