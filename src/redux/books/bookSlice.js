@@ -47,6 +47,7 @@ const bookSlice = createSlice({
   name: 'bookstore',
   initialState,
   reducers: {
+
     addBook: (state, action) => {
       const { title, author, category } = action.payload;
       const newBook = {
@@ -54,24 +55,23 @@ const bookSlice = createSlice({
       };
       state.bookStore.push(newBook);
     },
+
     removeBook: (state, action) => ({
       ...state,
       bookStore: state.bookStore.filter((book) => book.itemId !== action.payload),
     }),
   },
+
   extraReducers: (builder) => {
     builder.addCase(postBooks.pending, (state) => ({
       ...state,
       isLoading: true,
     }));
 
-    builder.addCase(postBooks.fulfilled, (state, action) => {
-      state.bookStore.push(action.payload);
-      return {
-        ...state,
-        isLoading: false,
-      };
-    });
+    builder.addCase(postBooks.fulfilled, (state) => ({
+      ...state,
+      isLoading: false,
+    }));
 
     builder.addCase(postBooks.rejected, (state) => ({
       ...state,
@@ -91,10 +91,12 @@ const bookSlice = createSlice({
         booksLoading: false,
       };
     });
+
     builder.addCase(getBooks.pending, (state) => ({
       ...state,
       booksLoading: true,
     }));
+
     builder.addCase(getBooks.rejected, (state) => ({
       ...state,
       booksLoading: false,

@@ -10,7 +10,7 @@ const Books = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBooks());
-  }, [dispatch]);
+  }, []);
   const BookComponent = books.map(
     (book) => (
       <Book
@@ -28,7 +28,6 @@ const Books = () => {
       ) : (
         BookComponent
       )}
-      {BookComponent}
       <Form />
     </section>
   );
