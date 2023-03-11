@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import ButtonWrap from './ButtonWrap';
 import { addBook, postBooks } from '../../redux/books/bookSlice';
 
 const Form = () => {
@@ -29,9 +30,9 @@ const Form = () => {
       <input value={author} type="text" onChange={(event) => setAuthor(event.target.value)} placeholder="Add Book Author" required />
       <input value={category} type="text" onChange={(event) => setCatagory(event.target.value)} placeholder="Add Book catagory" required />
       {loading ? (
-        <button type="submit" className="button add" disabled>Adding ....</button>
+        <ButtonWrap type="submit" className="button add" disabled>Adding ....</ButtonWrap>
       ) : (
-        <button type="submit" className="button add">Add Book</button>
+        <ButtonWrap type="submit" className="button add">Add Book</ButtonWrap>
       )}
     </form>
   );

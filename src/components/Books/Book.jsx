@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { CircularProgressbar } from 'react-circular-progressbar';
 import ProgressProvider from '../../redux/ProgressProvider';
 import 'react-circular-progressbar/dist/styles.css';
-
+import ButtonWrap from './ButtonWrap';
 import { deleteBook, removeBook } from '../../redux/books/bookSlice';
 
 const Book = ({
@@ -23,20 +23,20 @@ const Book = ({
           <span className="book-author">{author}</span>
         </div>
         <div className="button-frame">
-          <button type="button">comments</button>
+          <button className="book-author" type="button">comments</button>
           <div className="line" />
           <button
+            className="book-author button remove"
             onClick={() => {
               dispatch(deleteBook(id));
               dispatch(removeBook(id));
             }}
-            className="button remove"
             type="button"
           >
             Remove
           </button>
           <div className="line" />
-          <button type="button">comments</button>
+          <button className="book-author" type="button">comments</button>
         </div>
       </div>
 
@@ -55,14 +55,16 @@ const Book = ({
         </div>
         <div className="line" />
         <div className="info">
-          <span>
-            CURRENT CHAPTER
-          </span>
-          <h5>
-            Chapter
-            {percentage}
-          </h5>
-          <button type="button" className="progress">UPDATE PROGRESS</button>
+          <div>
+            <span>
+              CURRENT CHAPTER
+            </span>
+            <h5>
+              Chapter
+              {` ${percentage}`}
+            </h5>
+          </div>
+          <ButtonWrap type="button" className="progress">UPDATE PROGRESS</ButtonWrap>
         </div>
       </div>
     </BookCard>
@@ -85,13 +87,63 @@ const BookCard = styled.div`
   height: 10.6rem;
   background: #fff;
 
+  .book-frame {
+    height: 10vh;
+    h2 {
+      margin: 0;
+    }
+  }
   .fames {
+    width: 30%;
+    max-width: 250px;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    .line {
+      width: 2px;
+      height: 1rem;
+      background-color: #e8e8e8;
+      transform: rotate(0deg);
+    }
+
+    .catagories {
+      text-transform: capitalize;
+      color: #121212;
+      opacity: 0.5;
+      font-family: Montserrat;
+      font-size: 0.875rem;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+    }
+
+    .book-title {
+      text-transform: capitalize;
+      font-family: RobotoSlab;
+      font-size: 1.375rem;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: -0.2px;
+      color: #121212;
+    }
   }
 
   .button-frame {
     display: flex;
-
+    width: 100%;
+    justify-content: space-between;
+    button {
+      background-color: transparent;
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
   }
   .update {
     display: flex;
@@ -106,6 +158,7 @@ const BookCard = styled.div`
       transform: rotate(0deg);
     }
   }
+
   .stats {
     display: flex;
     flex-dirction: column;
@@ -139,6 +192,40 @@ const BookCard = styled.div`
         letter-spacing: normal;
         color: rgba(0, 0, 0, 0.5)
       }
+    }
+  }
+
+  .book-author {
+    text-transform: capitalize;
+    color: #4386bf;
+    font-family: RobotoSlab;
+    font-size: 0.875rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    h5 {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    span {
+      color: #121212;
+      opacity: 0.5;
+      font-family: RobotoSlab;
+      font-size: 0.813rem;
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
     }
   }
 `;
