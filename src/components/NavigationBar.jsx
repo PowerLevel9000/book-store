@@ -5,7 +5,7 @@ import { FaUserAlt } from 'react-icons/fa';
 
 const NavigationBar = () => (
   <NavWrapper>
-    <div className="menu">
+    <div className="menu main">
       <Link to="/"><div className="logo-wrapper">Bookstore Cms</div></Link>
       <ul className="menu">
         <Link to="/"><li>Books</li></Link>
@@ -56,6 +56,10 @@ const NavWrapper = styled.nav`
     color: #0290ff;
     display: grid;
     place-items: center;
+  }
+
+  .main {
+    min-width: 600px;
   }
 `;
 
