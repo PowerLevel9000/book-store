@@ -18,9 +18,9 @@ const Book = ({
     <BookCard>
       <div className="fames">
         <div className="book-frame">
-          <span className="catagories">{category}</span>
-          <h2 className="book-title">{title}</h2>
-          <span className="book-author">{author}</span>
+          <span className="catagories">{category.substring(1, 20)}</span>
+          <h2 className="book-title">{title.substring(1, 20)}</h2>
+          <span className="book-author">{author.substring(1, 20)}</span>
         </div>
         <div className="button-frame">
           <button className="book-author" type="button">comments</button>
