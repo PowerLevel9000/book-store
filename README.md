@@ -105,7 +105,7 @@
 
 > This link will guide you to my project
 
-- [Live Demo Link](https://powerlevel9000.github.io/book-store/)
+- [Live Demo Link](https://lively-heliotrope-1d9830.netlify.app/)
 <!-- - [Loom Video](https://www.loom.com/share/c97562d2fb964f129f4151ee5d42b9a7) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -240,7 +240,5 @@ If you like my Project give it a Star ✨🌟
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](https://github.com/PowerLevel9000/book-store/blob/dev/LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

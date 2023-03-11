@@ -13,7 +13,7 @@ export const postBooks = createAsyncThunk('book/postBooks', async (book) => {
       item_id: new Date(),
       title: book.title,
       author: book.author,
-      category: 'Fiction',
+      category: book.category,
     }),
   });
   const data = await response.json();
