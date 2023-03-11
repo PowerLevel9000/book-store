@@ -10,10 +10,10 @@ const Books = () => {
   const {
     bookstore: { bookStore: books, booksLoading: loading },
   } = useSelector((store) => store);
-  console.log(books);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBooks());
+    // eslint-disable-next-line
   }, []);
   const BookComponent = books.map(
     (book) => (
@@ -29,7 +29,9 @@ const Books = () => {
   return (
     <BooksWrapper>
       {loading ? (
-        <BallTriangle />
+        <div className="loader">
+          <BallTriangle />
+        </div>
       ) : (
         BookComponent
       )}
@@ -44,6 +46,11 @@ const BooksWrapper = styled.section`
   display: flex;
   flex-direction: column;
   margin: auto;
+
+  .loader {
+    display: grid;
+    place-items: center;
+  }
 `;
 
 export default Books;
