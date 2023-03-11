@@ -1,15 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import styled from 'styled-components';
 const NavigationBar = () => (
-  <nav>
-    <div className="logo-wrapper"><Link to="/">Store</Link></div>
+  <NavWrapper>
+    <Link to="/"><div className="logo-wrapper">Bookstore Cms</div></Link>
     <ul className="menu">
-      <li><Link to="/">Home</Link></li>
-      <li><Link to="/books">Books</Link></li>
-      <li><Link to="/catagories">Catagories</Link></li>
+      <Link to="/"><li>Books</li></Link>
+      <Link to="/catagories"><li>Catagories</li></Link>
     </ul>
-  </nav>
+  </NavWrapper>
 );
+
+const NavWrapper = styled.nav`
+  
+`
 
 export default NavigationBar;
