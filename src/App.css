@@ -2,3 +2,8 @@
   margin: 0;
   font-family: sans-serif;
 }
+
+.CircularProgressBar {
+  height: 2px !important;
+  border: 1px solid palegoldenrod;
+}

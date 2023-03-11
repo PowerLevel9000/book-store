@@ -7,14 +7,16 @@ const Form = () => {
   const [error, setError] = useState(null);
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [category, setCatagory] = useState('');
   const { bookstore: { isLoading: loading } } = useSelector((store) => store);
   const handleAdd = async (event) => {
     event.preventDefault();
     try {
-      await dispatch(postBooks({ title, author }));
-      dispatch(addBook({ title, author }));
+      await dispatch(postBooks({ title, author, category }));
+      dispatch(addBook({ title, author, category }));
       setTitle('');
       setAuthor('');
+      setCatagory('');
     } catch (error) {
       setError('An error occurred while adding the book. Please try again later.');
     }
@@ -25,6 +27,7 @@ const Form = () => {
       <h2>ADD NEW BOOK</h2>
       <input value={title} onChange={(event) => setTitle(event.target.value)} type="text" placeholder="Add Book Title" required />
       <input value={author} type="text" onChange={(event) => setAuthor(event.target.value)} placeholder="Add Book Author" required />
+      <input value={category} type="text" onChange={(event) => setCatagory(event.target.value)} placeholder="Add Book catagory" required />
       {loading ? (
         <button type="submit" className="button add" disabled>Adding ....</button>
       ) : (
