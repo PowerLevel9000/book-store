@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
@@ -12,7 +12,8 @@ const Book = ({
   id, title, author, category,
 }) => {
   const dispatch = useDispatch();
-  const [valueEnd] = React.useState(66);
+  const [valueEnd] = useState(Math.floor(Math.random() * 81) + 20);
+  const percentage = ((valueEnd * 40) / 100).toFixed();
   return (
     <BookCard>
       <div className="fames">
@@ -54,8 +55,13 @@ const Book = ({
         </div>
         <div className="line" />
         <div className="info">
-          <span>CURRENT CHAPTER</span>
-          <h5>Chapter random</h5>
+          <span>
+            CURRENT CHAPTER
+          </span>
+          <h5>
+            Chapter
+            {percentage}
+          </h5>
           <button type="button" className="progress">UPDATE PROGRESS</button>
         </div>
       </div>
@@ -77,7 +83,7 @@ const BookCard = styled.div`
   align-items: center;
   margin: 1rem 0;
   height: 10.6rem;
-  border: 1px solid black;
+  background: #fff;
 
   .fames {
     padding: 1rem;
