@@ -63,8 +63,4 @@ const NavWrapper = styled.nav`
   }
 `;
 
-// Link = styled.a`
-//   opacity: ${props=> props.clicked?"unset":"0.5"};
-// `;
-
 export default NavigationBar;
