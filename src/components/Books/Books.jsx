@@ -13,8 +13,7 @@ const Books = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBooks());
-    // eslint-disable-next-line
-  }, []);
+  }, [dispatch]);
   const BookComponent = books.map(
     (book) => (
       <Book

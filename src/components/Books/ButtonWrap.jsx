@@ -12,6 +12,7 @@ font-stretch: normal;
 font-style: normal;
 line-height: normal;
 letter-spacing: 0.5px;
+cursor: pointer;
 `;
 
 export default ButtonWrap;

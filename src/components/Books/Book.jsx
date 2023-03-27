@@ -23,7 +23,7 @@ const Book = ({
           <span className="book-author">{author.substring(0, 20)}</span>
         </div>
         <div className="button-frame">
-          <button className="book-author" type="button">comments</button>
+          <button className="book-author d" type="button">comments</button>
           <div className="line" />
           <button
             className="book-author button remove"
@@ -36,7 +36,7 @@ const Book = ({
             Remove
           </button>
           <div className="line" />
-          <button className="book-author" type="button">comments</button>
+          <button className="book-author d" type="button">comments</button>
         </div>
       </div>
 
@@ -143,6 +143,7 @@ const BookCard = styled.div`
       border: none;
       margin: 0;
       padding: 0;
+      cursor: pointer;
     }
   }
   .update {
@@ -161,14 +162,13 @@ const BookCard = styled.div`
 
   .stats {
     display: flex;
-    flex-dirction: column;
     gap: 2rem;
+    cursor: pointer;
     div {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-
       h5 {
         height: fit-content;
         font-family: Montserrat;
@@ -227,6 +227,10 @@ const BookCard = styled.div`
       line-height: normal;
       letter-spacing: normal;
     }
+  }
+
+  .d {
+    cursor: no-drop;
   }
 `;
 
