@@ -46,6 +46,7 @@
 > This Project is for organising your books and check the status of it how much you completetd it  
 
 **Book Store** is a React-oriented project
+This is a React and Api based Project, where you can add book to server and get books from the server 
 
 <br>
 
