@@ -4,7 +4,7 @@
   <!-- <img src="./src/media/martin-logo/my-logo.png" alt="logo" width="140"  height="auto" /> -->
 
   <br/>
-  <h1><b>Mathematica</b><br><br></h1>
+  <h1><b>Book Store</b><br><br></h1>
   
  </div>
 
@@ -41,11 +41,11 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Mathematica <a name="about-project"></a>
+# 📖 Book Store <a name="about-project"></a>
 
-> This Project is for making mathmatics calculations and also in future we will update with complex funtions as well 
+> This Project is for organising your books and check the status of it how much you completetd it  
 
-**Mathematica** is a React-oriented project
+**Book Store** is a React-oriented project
 
 <br>
 
@@ -78,8 +78,7 @@
 <details>
 <summary>Frame Work</summary>
   <ul>
-    <li><a href="https://pokeapi.co/"></a></li>
-    <li><a href="https://www.notion.so/microverse/Involvement-API-869e60b5ad104603aa6db59e08150270">React</a></li>
+    <li><a href="https://reactjs.org/">React</a></li>
   </ul>
 </details>
 
@@ -92,9 +91,9 @@
 
 > Following features you should observe
 
-- **You can make some calculation**
+- **You can add your favorite books**
 - **A home page**
-- **An API Quote machine**
+- **An functionality to check the status**
 
 
 
@@ -106,7 +105,7 @@
 
 > This link will guide you to my project
 
-- [Live Demo Link](https://powerlevel9000.github.io/mathmatica/)
+- [Live Demo Link](https://lively-heliotrope-1d9830.netlify.app/)
 <!-- - [Loom Video](https://www.loom.com/share/c97562d2fb964f129f4151ee5d42b9a7) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -145,15 +144,15 @@ Clone this repository to your desired folder:
 
  Execute the following thing:
  
- - Mathematica
- - As complex calculations
+ - books adding and removing
+ - check status
 
 
 ### Run tests
 
 - To run all test cases you need to run `npm test` in the root dir 
 - Linters for files run in the root dir
-  - `npx eslint .` for JS linting
+  - `npx eslint "**/*.{js,jsx}` for JS or jsx linting
   - `npx stylelint "**/*.{css,scss}"`for CSS or SCSS linting
   - `--fix` flag for instant fixable fix
   - `npx hint .` for HTML linting
@@ -165,7 +164,8 @@ You can deploy this project using:
 - Fork our Repo and clone it or download `zip` and extract it
 - Edit some changes
 - Run `npm run build` to make our project production ready
-- deploy it using [GitHub](www.github.com) pages 
+- deploy it using [GitHub](www.github.com) pages (gh-pages run `npm i -D gh-pages` )
+- also, you can use netlify to deploy it
  
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -207,7 +207,7 @@ You can deploy this project using:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/PowerLevel9000/mathmatica/issues)).
+Feel free to check the [issues page](https://github.com/PowerLevel9000/book-store/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -224,14 +224,14 @@ If you like my Project give it a Star ✨🌟
 ## ❓ FAQ <a name="faq"></a>
 
 > ask questions to be here 
-<!-- 
-- **Question_1** How to close pop up
 
-  - Answer_1 Click outside the popup or cross button
+- **Question_1** How to add a book
 
-- **Question_2** How to add like 
+  - Answer_1 submit the form to add a book
 
-  - Answer_2 Just Tap on the heart button and wait for awhile -->
+- **Question_2** How to remove a book  
+
+  - Answer_2 Just Tap on the remove button and wait for a while 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -239,8 +239,6 @@ If you like my Project give it a Star ✨🌟
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/PowerLevel9000/mathmatica/blob/dev/LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT](https://github.com/PowerLevel9000/book-store/blob/dev/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
