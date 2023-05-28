@@ -45,7 +45,7 @@ This Project is for organizing your books and check the status of your reading
 
 ## 🧪  Linters And Deployment <a name='linters'></a>
 [![Linters](https://github.com/PowerLevel9000/book-store/actions/workflows/linters.yml/badge.svg)](https://github.com/PowerLevel9000/book-store/actions/workflows/linters.yml)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c5a19fe6-862e-4bf2-ae11-53212c53bd6b/deploy-status)](https://app.netlify.com/sites/book-store-9000/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c5a19fe6-862e-4bf2-ae11-53212c53bd6b/deploy-status?branch=dev)](https://app.netlify.com/sites/book-store-9000/deploys?branch=dev)
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
