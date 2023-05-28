@@ -12,7 +12,10 @@ const Book = ({
   id, title, author, category,
 }) => {
   const dispatch = useDispatch();
-  const [valueEnd] = useState(Math.floor(Math.random() * 81) + 20);
+  const [valueEnd, setValueEnd] = useState(Math.floor(Math.random() * 81) + 20);
+  const handleUpdate = () => {
+    setValueEnd(Math.floor(Math.random() * 81) + 20);
+  };
   const percentage = ((valueEnd * 40) / 100).toFixed();
   return (
     <BookCard>
@@ -64,7 +67,7 @@ const Book = ({
               {` ${percentage}`}
             </h5>
           </div>
-          <ButtonWrap type="button" className="progress">UPDATE PROGRESS</ButtonWrap>
+          <ButtonWrap type="button" className="progress" onClick={handleUpdate}>UPDATE PROGRESS</ButtonWrap>
         </div>
       </div>
     </BookCard>
