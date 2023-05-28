@@ -1,25 +1,21 @@
 <a name="readme-top"></a>
 <div align="center">
-  <img src="./documentation/adarsh-logo/my-logo.png" alt="logo" width="140"  height="auto" />
-  <!-- <img src="./src/media/martin-logo/my-logo.png" alt="logo" width="140"  height="auto" /> -->
+  <img src="./adarsh-logo.png" alt="logo" width="140"  height="auto" />
 
-  <br/>
   <h1><b>Book Store</b><br><br></h1>
   
  </div>
 
-<!-- <div align="center">
+<div align="center">
   <h1>App Mock</h1>
-  <img src="./src/media/app-mocks/all-devices-black.png" alt="logo" width="100%"  height="auto" />
+  <img src="./all-devices-black.png" alt="logo" width="100%"  height="auto" />
 </div>
 <br>
-<br>
-<br> -->
-<!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
+  - [🧪 Linters and Deployment](#linter)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
@@ -43,18 +39,18 @@
 
 # 📖 Book Store <a name="about-project"></a>
 
-> This Project is for organising your books and check the status of it how much you completetd it  
+This Project is for organizing your books and check the status of your reading  
 
-**Book Store** is a React-oriented project
-This is a React and Api based Project, where you can add book to server and get books from the server 
+**Book Store** is a React-oriented project and Api based Project, where you can add book to server and get books from the server 
 
-<br>
-
+## 🧪  Linters And Deployment <a name='linters'></a>
+[![Linters](https://github.com/PowerLevel9000/book-store/actions/workflows/linters.yml/badge.svg)](https://github.com/PowerLevel9000/book-store/actions/workflows/linters.yml)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c5a19fe6-862e-4bf2-ae11-53212c53bd6b/deploy-status)](https://app.netlify.com/sites/book-store-9000/deploys)
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> In this project I used many skills, tech and libraries
+In this project I used many skills, tech and libraries
 
 <details>
   <summary>Documentation</summary>
@@ -77,7 +73,7 @@ This is a React and Api based Project, where you can add book to server and get 
   </ul>
 </details>
 <details>
-<summary>Frame Work</summary>
+<summary>FrameWork</summary>
   <ul>
     <li><a href="https://reactjs.org/">React</a></li>
   </ul>
@@ -90,11 +86,10 @@ This is a React and Api based Project, where you can add book to server and get 
 
 ### Key Features <a name="key-features"></a>
 
-> Following features you should observe
-
 - **You can add your favorite books**
 - **A home page**
 - **An functionality to check the status**
+- **An functionality to update status**
 
 
 
@@ -104,10 +99,9 @@ This is a React and Api based Project, where you can add book to server and get 
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> This link will guide you to my project
+This link will guide you to my project
 
 - [Live Demo Link](https://lively-heliotrope-1d9830.netlify.app/)
-<!-- - [Loom Video](https://www.loom.com/share/c97562d2fb964f129f4151ee5d42b9a7) -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -115,49 +109,51 @@ This is a React and Api based Project, where you can add book to server and get 
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
->For having local file and project you can fork this repo 
-
->And for making changes you you should follow prerequisites
+For having local file and project you can fork this repo or clone it using `git clone https://github.com/PowerLevel9000/book-store.git`
+And for making changes you you should follow prerequisites
 
 
 ### Prerequisites
-To edit this project you need:
- - Node.js installed
- - A Terminal 
+
+In order to edit this project you need:
+
+ - Any text editor such as note pad and word pad
  - A web browser
+ - Node js installed
  - An IDE
 
- - suggested IDE
-   - visual studio code
-   - atom 
-   - visual code 
+#### Suggested IDE
+ - Visual studio code `I prefer this one 🙃🙃`
+ - Atom 
+ - Sublime 
+ - IntelliJ IDEA
+ - Visual code 
 
 ### Setup
 
 Clone this repository to your desired folder:
 
- - And run `npm i` in root dir <small>to install node modules</small>
- - Then run `npm start`
- - All this makes our project open  in the browser
+- Open your terminal there (bash cmd powershell run etc...) and run `npm i` to install node modules
+- `npm start` this will open project in browser
+- If you to edit something edit in src dir and then run in terminal `npm run build` to build it for production
 
+- Before deployment have some linter check 
+  - [ ] `npx stylelint "**/*.{css,scss}"` for css and saas file
+  - [ ] `npx eslint .` for js files
+  - [ ] `npx hint .` for html files 
 
-### Usage
+- After fixing error build deploy for production
+
+### Install 
+```
+npm i 
+```
+ ### Usage
 
  Execute the following thing:
  
  - books adding and removing
  - check status
-
-
-### Run tests
-
-- To run all test cases you need to run `npm test` in the root dir 
-- Linters for files run in the root dir
-  - `npx eslint "**/*.{js,jsx}` for JS or jsx linting
-  - `npx stylelint "**/*.{css,scss}"`for CSS or SCSS linting
-  - `--fix` flag for instant fixable fix
-  - `npx hint .` for HTML linting
- 
 
 ### Deployment
 
@@ -182,18 +178,11 @@ You can deploy this project using:
 - Twitter: [@PowerLevel9002](https://twitter.com/PowerLevel9002?t=AIuSN7mTxk5a_MWpLolEjA&s=09)
 - LinkedIn: [@Adarsh Pathak](https://www.linkedin.com/in/adarsh-pathak-56a831256/)
 
-<!-- 👤 **Martin Karugaba**
-
-- GitHub: [@martinkarugaba](https://github.com/martinkarugaba)
-- Twitter: [@martin_karugaba](https://twitter.com/martin_karugaba)
-- LinkedIn: [@martin_karugaba](https://www.linkedin.com/in/martin-karugaba-822442173/) -->
 
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
 
 - [ ] **mobile and tablet version**
 - [ ] **improve functionality**

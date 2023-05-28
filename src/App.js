@@ -4,6 +4,7 @@ import Books from './components/Books/Books';
 import Catagories from './components/Catagories';
 import NavigationBar from './components/NavigationBar';
 import Default from './components/Default';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/catagories" element={<Catagories />} />
           <Route path="*" element={<Default />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
